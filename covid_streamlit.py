@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 import time
 from datetime import datetime
-from clean_geojson import *
+from clean_data import *
 
 st.markdown("""
 <style>

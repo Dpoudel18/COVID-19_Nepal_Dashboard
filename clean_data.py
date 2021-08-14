@@ -7,9 +7,9 @@ from datetime import datetime
 
 
 
-geo_df = json.load(open("nepal.geojson",'r'))
-district_df = pd.read_csv('district_covid-19_data_nepal.csv')
-total_df = pd.read_csv('summary_covid-19_data_nepal.csv')
+geo_df = json.load(open("data/nepal.geojson",'r'))
+district_df = pd.read_csv('data/district_covid-19_data_nepal.csv')
+total_df = pd.read_csv('data/summary_covid-19_data_nepal.csv')
 
 district_and_id = {}
 district_and_province = {}

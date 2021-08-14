@@ -6,7 +6,15 @@ import plotly.express as px
 import time
 from datetime import datetime
 from bs4 import BeautifulSoup
+import ssl
 
+# debug SSL error
+try:
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
 
 url = 'https://kathmandupost.com/covid19'
 page = urllib.request.urlopen(url)
@@ -71,13 +79,13 @@ df = df[['District','Confirmed','Deaths']]
 #saving the file
 jj = my_df
 ll = df
-jj.to_csv("summary_covid-19_data_nepal.csv",index=False)
-ll.to_csv("district_covid-19_data_nepal.csv",index=False)
+jj.to_csv("data/summary_covid-19_data_nepal.csv",index=False)
+ll.to_csv("data/district_covid-19_data_nepal.csv",index=False)
 
 
-geo_df = json.load(open("nepal.geojson",'r'))
-district_df = pd.read_csv('district_covid-19_data_nepal.csv')
-total_df = pd.read_csv('summary_covid-19_data_nepal.csv')
+geo_df = json.load(open("data/nepal.geojson",'r'))
+district_df = pd.read_csv('data/district_covid-19_data_nepal.csv')
+total_df = pd.read_csv('data/summary_covid-19_data_nepal.csv')
 
 district_and_id = {}
 district_and_province = {}
