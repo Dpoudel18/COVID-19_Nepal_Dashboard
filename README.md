@@ -24,11 +24,11 @@ covid_streamlit.py
 # Running the Program
 To run the demo version:
 ```
-streamlit run covid_streamlit.py
+streamlit run src/covid_streamlit.py
 ```
 To run the live and updated version:
 ```
-streamlit run main.py
+streamlit run src/main.py
 ```
 # Dependencies
 ```
